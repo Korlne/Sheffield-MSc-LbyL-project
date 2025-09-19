@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<MethodSetup Method="DL::DNN">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.1 [262657]"/>
+    <Info name="ROOT Release" value="6.32/04 [401412]"/>
+    <Info name="Creator" value="glamprin"/>
+    <Info name="Date" value="Mon Sep  9 14:55:36 2024"/>
+    <Info name="Host" value="Linux buildvm-x86-07.iad2.fedoraproject.org 6.9.7-200.fc40.x86_64 #1 SMP PREEMPT_DYNAMIC Thu Jun 27 18:11:45 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/afs/cern.ch/user/g/glamprin/Light-by-Light/LbyL/Input"/>
+    <Info name="Training events" value="3686"/>
+    <Info name="TrainingTime" value="2.81077147e-01"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="Yes">Norm</Option>
+    <Option name="H" modified="Yes">False</Option>
+    <Option name="CreateMVAPdfs" modified="No">False</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+    <Option name="InputLayout" modified="No">0|0|0</Option>
+    <Option name="BatchLayout" modified="No">0|0|0</Option>
+    <Option name="Layout" modified="Yes">DENSE|15|RELU,BNORM,DENSE|10|RELU,DENSE|5|RELU,DENSE|1|LINEAR</Option>
+    <Option name="ErrorStrategy" modified="No">CROSSENTROPY</Option>
+    <Option name="WeightInitialization" modified="Yes">XAVIER</Option>
+    <Option name="RandomSeed" modified="No">0</Option>
+    <Option name="ValidationSize" modified="No">20%</Option>
+    <Option name="Architecture" modified="Yes">CPU</Option>
+    <Option name="TrainingStrategy" modified="Yes">LearningRate=1e-3,Repetitions=8,ConvergenceSteps=10,BatchSize=35,TestRepetitions=5,MaxEpochs=200,WeightDecay=1e-2,Regularization=None,Optimizer=ADAM,DropConfig=0.1+0.1+0.1</Option>
+  </Options>
+  <Variables NVar="5">
+    <Variable VarIndex="0" Expression="photon_f1" Label="photon_f1" Title="photon_f1" Unit="" Internal="photon_f1" Type="F" Min="-2.76910514e-02" Max="8.99348319e-01"/>
+    <Variable VarIndex="1" Expression="photon_weta2" Label="photon_weta2" Title="photon_weta2" Unit="" Internal="photon_weta2" Type="F" Min="-8.25904775e-03" Max="2.05229651e-02"/>
+    <Variable VarIndex="2" Expression="photon_Eratio" Label="photon_Eratio" Title="photon_Eratio" Unit="" Internal="photon_Eratio" Type="F" Min="-8.18080381e-02" Max="1.00023997e+00"/>
+    <Variable VarIndex="3" Expression="photon_fracs1" Label="photon_fracs1" Title="photon_fracs1" Unit="" Internal="photon_fracs1" Type="F" Min="-1.73848182e-01" Max="2.25925922e+00"/>
+    <Variable VarIndex="4" Expression="photon_f1core" Label="photon_f1core" Title="photon_f1core" Unit="" Internal="photon_f1core" Type="F" Min="-1.11756409e-02" Max="4.56570625e-01"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="1">
+    <Transform Name="Normalize">
+      <Selection>
+        <Input NInputs="5">
+          <Input Type="Variable" Label="photon_f1" Expression="photon_f1"/>
+          <Input Type="Variable" Label="photon_weta2" Expression="photon_weta2"/>
+          <Input Type="Variable" Label="photon_Eratio" Expression="photon_Eratio"/>
+          <Input Type="Variable" Label="photon_fracs1" Expression="photon_fracs1"/>
+          <Input Type="Variable" Label="photon_f1core" Expression="photon_f1core"/>
+        </Input>
+        <Output NOutputs="5">
+          <Output Type="Variable" Label="photon_f1" Expression="photon_f1"/>
+          <Output Type="Variable" Label="photon_weta2" Expression="photon_weta2"/>
+          <Output Type="Variable" Label="photon_Eratio" Expression="photon_Eratio"/>
+          <Output Type="Variable" Label="photon_fracs1" Expression="photon_fracs1"/>
+          <Output Type="Variable" Label="photon_f1core" Expression="photon_f1core"/>
+        </Output>
+      </Selection>
+      <Class ClassIndex="0">
+        <Ranges>
+          <Range Index="0" Min="7.3196236044168472e-03" Max="7.2885155677795410e-01"/>
+          <Range Index="1" Min="-8.2590477541089058e-03" Max="2.0510330796241760e-02"/>
+          <Range Index="2" Min="-8.1808038055896759e-02" Max="1.0002399682998657e+00"/>
+          <Range Index="3" Min="-7.0176340639591217e-02" Max="1.5755490064620972e+00"/>
+          <Range Index="4" Min="1.5643513761460781e-03" Max="4.5657062530517578e-01"/>
+        </Ranges>
+      </Class>
+      <Class ClassIndex="1">
+        <Ranges>
+          <Range Index="0" Min="-2.7691051363945007e-02" Max="8.9934831857681274e-01"/>
+          <Range Index="1" Min="-5.7735824957489967e-03" Max="2.0522965118288994e-02"/>
+          <Range Index="2" Min="0.0000000000000000e+00" Max="1.0000000000000000e+00"/>
+          <Range Index="3" Min="-1.7384818196296692e-01" Max="2.2592592239379883e+00"/>
+          <Range Index="4" Min="-1.1175640858709812e-02" Max="3.5707098245620728e-01"/>
+        </Ranges>
+      </Class>
+      <Class ClassIndex="2">
+        <Ranges>
+          <Range Index="0" Min="-2.7691051363945007e-02" Max="8.9934831857681274e-01"/>
+          <Range Index="1" Min="-8.2590477541089058e-03" Max="2.0522965118288994e-02"/>
+          <Range Index="2" Min="-8.1808038055896759e-02" Max="1.0002399682998657e+00"/>
+          <Range Index="3" Min="-1.7384818196296692e-01" Max="2.2592592239379883e+00"/>
+          <Range Index="4" Min="-1.1175640858709812e-02" Max="4.5657062530517578e-01"/>
+        </Ranges>
+      </Class>
+    </Transform>
+  </Transformations>
+  <MVAPdfs/>
+  <Weights NetDepth="5" InputDepth="1" InputHeight="1" InputWidth="5" BatchSize="1" BatchDepth="1" BatchHeight="35" BatchWidth="5" LossFunction="C" Initialization="X" Regularization="0" OutputFunction="S" WeightDecay="9.9999997764825821e-03">
+    <DenseLayer Width="15" ActivationFunction="1">
+      <Weights Rows="15" Columns="5">
+        3.558169e-01  -5.627928e-01  2.960662e-01  -2.384518e-01  1.358646e-01  3.124613e-01  -1.304261e-01  4.763118e-01  3.768612e-01  -2.174238e-01  1.039631e+00  -5.859424e-01  6.210687e-02  -5.823103e-01  -1.075514e-01  2.432317e-01  -1.084198e+00  -5.238441e-01  1.488422e-01  3.082877e-01  1.393543e-01  6.111121e-01  1.505453e-01  1.014649e-01  5.806710e-01  -5.684742e-01  1.168104e-01  -3.135367e-02  4.117095e-02  1.078853e-01  6.087182e-01  -3.180393e-03  3.077077e-01  -1.682474e-01  -5.940579e-01  -3.590149e-01  2.381391e-01  1.245629e-01  3.961646e-01  -9.801737e-01  -9.613983e-02  -4.023104e-01  6.373010e-01  -3.252818e-02  5.586269e-01  4.234493e-01  -3.043140e-01  -1.998577e-01  -1.052117e+00  1.610349e-01  4.421271e-02  -6.311741e-01  -3.821894e-02  -4.699554e-02  6.616600e-01  -3.511819e-01  -3.226758e-03  -8.881639e-02  -2.677492e-01  -1.005637e+00  4.795023e-01  -2.013260e-01  3.222869e-01  6.677513e-01  -3.938236e-01  8.301939e-01  2.271121e-01  -2.065152e-01  -4.033537e-03  -2.133206e-01  -1.897400e-01  2.758315e-01  -2.352430e-02  1.497817e-01  -1.153391e-01  
+      </Weights>
+      <Biases Rows="15" Columns="1">
+        7.107784e-02  -1.394084e-01  -8.335610e-02  3.690313e-02  8.591557e-02  -2.992135e-01  5.252445e-01  -1.152899e-01  3.149114e-01  -1.061392e-01  6.834265e-02  -2.706973e-01  -5.457290e-03  -2.077183e-01  -1.642178e-01  
+      </Biases>
+    </DenseLayer>
+    <BatchNormLayer Momentum="-1.0000000000000000e+00" Epsilon="9.9999997473787516e-05">
+      <Training-mu Rows="1" Columns="15">
+        7.457309e-02  2.142108e-02  7.158064e-02  1.508949e-02  1.174974e-01  7.841215e-02  6.658718e-01  5.747721e-01  2.258801e-01  2.019788e-01  1.462848e-02  7.160617e-01  1.914752e-02  3.689190e-02  1.044104e-01  
+      </Training-mu>
+      <Training-variance Rows="1" Columns="15">
+        2.338121e-02  4.489207e-03  3.437116e-02  9.200104e-03  3.635494e-02  1.088042e-02  8.404405e-02  2.130027e-01  1.070833e-01  4.194636e-02  5.024696e-03  3.446651e-01  5.666087e-03  1.788080e-02  1.572349e-02  
+      </Training-variance>
+      <Gamma Rows="1" Columns="15">
+        9.773895e-01  1.145223e+00  1.089396e+00  1.005299e+00  1.029156e+00  2.407839e+00  8.173371e-01  1.186702e+00  1.217493e+00  1.107278e+00  9.932509e-01  1.317148e+00  1.049707e+00  1.641650e+00  1.187665e+00  
+      </Gamma>
+      <Beta Rows="1" Columns="15">
+        -2.386816e-03  2.154924e-02  -3.088769e-02  -1.194529e-01  -3.458232e-01  2.725740e-01  -8.653966e-02  -1.034929e-01  -2.646689e-01  -1.457114e-01  -3.177973e-02  -5.247033e-02  -7.658321e-02  -5.969609e-02  -6.502649e-02  
+      </Beta>
+    </BatchNormLayer>
+    <DenseLayer Width="10" ActivationFunction="1">
+      <Weights Rows="10" Columns="15">
+        3.350344e-01  -7.094630e-02  -5.441618e-01  -1.519849e-01  3.263003e-02  -8.060905e-02  -2.856742e-01  5.711158e-01  -5.417794e-04  3.736445e-02  -4.016155e-03  -1.720788e-01  2.980483e-01  -3.637742e-01  -8.569850e-01  -8.874020e-01  2.684036e-01  4.423841e-01  3.740192e-01  3.836337e-01  -1.940579e-01  6.950525e-01  -4.444832e-01  3.319046e-01  1.277562e-01  2.034688e-01  2.505566e-01  -3.302551e-01  -1.196285e-01  -4.487521e-01  -7.945500e-01  -6.297964e-02  5.397122e-01  -3.507036e-01  1.014088e-01  2.464377e-01  -2.842347e-01  2.519228e-01  -3.193493e-01  8.874014e-01  -6.443809e-02  -1.286457e-01  5.156053e-01  3.028225e-01  -1.425574e-01  -3.403135e-02  -4.019534e-01  -7.461962e-01  -1.535992e-01  -9.851801e-01  1.315728e+00  -1.088463e-01  3.533494e-01  -2.450263e-01  1.862558e-02  3.742262e-01  1.055104e-01  -2.982229e-01  1.016603e-01  8.322672e-01  -4.753087e-01  4.340139e-02  -2.665831e-01  -7.433419e-01  1.944564e-01  -2.121234e-01  -5.741037e-02  -4.994281e-01  -2.675250e-01  3.027634e-01  2.919037e-01  -5.684794e-01  -2.120038e-01  -1.363607e-01  -3.694690e-01  4.042374e-01  -3.294652e-01  2.844835e-01  4.583613e-01  6.857963e-01  -6.768308e-01  -4.995611e-01  1.340768e-01  2.130590e-01  -7.830027e-02  -4.403389e-01  -4.868946e-01  -8.809934e-01  2.751569e-01  3.489773e-01  1.453257e-01  2.109916e-01  3.637594e-01  3.699259e-01  -6.513836e-01  2.575340e-02  2.206896e-01  -3.506168e-01  -2.986761e-01  -6.797208e-01  -5.107501e-02  -3.510366e-01  -3.335629e-01  -3.971658e-01  -5.557553e-01  2.055577e-01  -8.493009e-01  1.147989e-01  -8.917713e-01  -8.130038e-01  2.790111e-02  -2.074039e-01  -4.233198e-01  -1.562097e-01  1.111251e-01  -5.045323e-01  -7.511271e-01  1.127273e-01  -3.950553e-01  -1.374372e-03  6.573363e-02  5.325069e-01  2.640305e-02  -8.491194e-02  1.337602e-01  1.139194e-01  -6.916451e-01  -2.887542e-01  -9.426023e-02  -3.770619e-01  -5.756317e-02  -4.458158e-01  3.106674e-01  1.302706e-01  5.470321e-02  -6.094929e-02  -6.300301e-01  -1.012241e-01  -8.086992e-02  3.586607e-01  2.174094e-02  5.876091e-01  -3.735271e-01  5.074248e-01  4.173001e-01  3.716552e-01  -6.222263e-01  2.481620e-01  -2.716707e-01  3.571583e-01  
+      </Weights>
+      <Biases Rows="10" Columns="1">
+        1.109853e-02  2.230707e-02  7.924709e-03  3.428587e-01  7.852198e-02  -2.061607e-01  1.527394e-01  7.446381e-02  6.046391e-02  -1.735227e-01  
+      </Biases>
+    </DenseLayer>
+    <DenseLayer Width="5" ActivationFunction="1">
+      <Weights Rows="5" Columns="10">
+        1.044956e+00  5.250992e-01  4.479555e-02  -4.613510e-01  5.996028e-01  -3.055687e-01  -3.952403e-01  -4.209292e-01  -6.154494e-02  -1.364101e-01  -2.010999e-01  -9.209725e-01  -9.219181e-01  -3.538940e-01  -1.127103e+00  -5.447913e-01  9.827688e-02  1.974152e-01  -5.756687e-01  -7.404300e-02  7.590050e-01  1.469246e-02  -7.622312e-01  -1.185390e+00  2.618964e-01  1.625580e-01  4.067909e-01  4.844101e-01  -8.870630e-01  1.069682e+00  4.147948e-01  4.371291e-01  -7.322599e-01  -2.800230e-02  3.434528e-01  1.141139e-01  2.944588e-01  8.752059e-01  -8.926147e-01  7.149028e-01  5.876705e-01  1.453851e+00  6.655713e-01  1.127130e+00  2.353507e-01  -7.993814e-01  -8.754143e-01  4.784165e-01  -3.474465e-01  4.070780e-01  
+      </Weights>
+      <Biases Rows="5" Columns="1">
+        -8.846714e-02  -1.956993e-01  -5.593353e-02  -2.919180e-02  5.320760e-01  
+      </Biases>
+    </DenseLayer>
+    <DenseLayer Width="1" ActivationFunction="0">
+      <Weights Rows="1" Columns="5">
+        9.171599e-01  8.766927e-01  -5.774714e-01  1.421371e+00  -5.112343e-01  
+      </Weights>
+      <Biases Rows="1" Columns="1">
+        -2.549455e-01  
+      </Biases>
+    </DenseLayer>
+  </Weights>
+</MethodSetup>
