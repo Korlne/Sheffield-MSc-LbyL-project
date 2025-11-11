@@ -1,4 +1,4 @@
-# Full work of MSc Light-by-Light Scattering Phenomena in Ultra-Peripheral Collisions at the ATLAS Experiment
+# Full work of MSc Light-by-Light Scattering Phenomenon in Ultra-Peripheral Collisions at the ATLAS Experiment
 (Code and plots only, no AOD files)
 
 The mainly used code were:
